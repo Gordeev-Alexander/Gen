@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">PassGen</string>
+    <string name="button1">Генератор надёжных паролей</string>
+
+    <!--Строки меню-->
+    <string name="details">Сведения</string>
+    <string name="exit">Выйти</string>
+
+    <!--Строки 1 фрагмента-->
+    <string name="passgentitle1">Настройка:</string>
+    <string name="passgentitle2">Использовать рекомендуемые параметры</string>
+    <string name="configurateManual">Настроить вручную</string>
+    <string name="configurateParameters">Настройте параметры:</string>
+    <string name="passwordLenght">Длина пароля:</string>
+    <string name="lettersCapitalUse">Использовать заглавные буквы</string>
+    <string name="numbersUse">Использовать цифры</string>
+    <string name="charactersSpecialUse">Использовать специальные символы</string>
+    <string name="passwordGenerate">Сгенерировать пароль</string>
+    <string name="passwordCopy">Скопировать пароль</string>
+    <string name="passwordOutput">Ваш пароль появится здесь</string>
+
+    <!--Строки 2 фрагмента-->
+    <string name="passSelectionTitle">Введите старый пароль для преобразования:</string>
+    <string name="passSelectionInputOldPassword">Введите исходный пароль</string>
+    <string name="passSelectionUseSynonymsAntonyms">Использовать синонимы/антонимы</string>
+    <!--Строки 3 фрагмента-->
+    <string name="passwordCheck">Проверить пароль</string>
+    <string name="numbers">Цифры</string>
+    <string name="containsNumbers">Содержит цифры</string>
+    <string name="specialCharacters">Специальные символы</string>
+    <string name="containsSpecialCharacters">Содержит специальные символы (!@#$% и др.)</string>
+    <string name="capitalLetters">Заглавные буквы</string>
+    <string name="containsCapitalLetters">Содержит заглавные буквы</string>
+    <string name="inputPasswordCheck">Введите пароль для оценки</string>
+    <string name="enterPasswordToVerify">Введите пароль для проверки</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_nav_graph"
+    app:startDestination="@id/PassGen">
+
+    <fragment
+        android:id="@+id/PassGen"
+        android:name="com.penzgtu.gen.PassGenFragment"
+        android:label="Надёжные пароли" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/PassSelect"
+        android:name="com.penzgtu.gen.PassSelectionFragment"
+        android:label="Корпоративные пароли" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/PassCheck"
+        android:name="com.penzgtu.gen.PassExamFragment"
+        android:label="Проверка паролей" >
+    </fragment>
+
+</navigation>

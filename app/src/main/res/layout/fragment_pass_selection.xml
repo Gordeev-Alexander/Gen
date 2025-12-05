@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PassSelectionFragment">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/passwordSelectionOutput"
+        android:layout_marginBottom="8dp"
+        tools:context=".PassSelectionFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/first_fragment_layout_padding">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/passSelectionTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/passSelectionInputOldPassword"
+                app:helperText="Обязательно для заполнения*"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:helperTextTextColor="@color/red"
+                app:startIconDrawable="@drawable/pass_selection_input_text"
+                app:endIconMode="password_toggle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passSelectionInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:inputType="textPassword"
+                    android:textSize="16sp"
+                    android:gravity="center"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchSemantic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/passSelectionUseSynonymsAntonyms"
+                app:layout_constraintTop_toBottomOf="@id/passSelectionTextInputLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/passwordSelectionOutput"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:minLines="1"
+        android:maxLines="5"
+        android:scrollbars="vertical"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:ellipsize="none"
+        android:breakStrategy="simple"
+        android:hyphenationFrequency="none"
+        android:background="@drawable/edit_text_background"
+        android:paddingStart="@dimen/outputGraph_start_padding"
+        android:paddingEnd="@dimen/outputGraph_end_padding"
+        android:textSize="@dimen/outputGraph_text_size"
+        android:textColor="@color/black"
+        android:hint="@string/passwordOutput"
+        android:gravity="center"
+        android:textColorHint="@color/grey"
+        android:editable="false"
+        android:focusable="false"
+        android:cursorVisible="false"
+        android:longClickable="true"
+        android:textIsSelectable="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/passSelectionButtonGenerate"
+        />
+
+    <ImageButton
+        android:id="@+id/passSelectionButtonGenerate"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:src="@drawable/rocket"
+        app:tint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_gradient"
+        android:contentDescription="@string/passwordGenerate" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PassGenFragment">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/passGenButtonGenerate"
+        android:layout_marginBottom="8dp"
+        tools:context=".PassGenFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/first_fragment_layout_padding">
+
+            <TextView
+                android:id="@+id/passgentitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/passgentitle1"
+                android:textSize="@dimen/customization_text_size"
+                android:layout_marginTop="@dimen/customization_text_top_margins"
+                android:layout_marginStart="@dimen/customization_text_start_margins" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radioRecommended"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/passgentitle2"
+                    android:textSize="@dimen/radio_button_recommended_settings_text_size"
+                    android:layout_marginTop="@dimen/radio_button_recommended_settings_top_margins"
+                    android:layout_marginStart="@dimen/radio_button_recommended_settings_start_margins" />
+
+                <RadioButton
+                    android:id="@+id/radioCustom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/configurateManual"
+                    android:textSize="@dimen/radio_button_configurate_manual_text_size"
+                    android:layout_marginStart="@dimen/radio_button_configurate_manual_start_margins" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/customSettingsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/hidden_layout_top_margins"
+                android:padding="@dimen/hidden_layout_padding"
+                android:background="@drawable/rounded_background"
+                android:gravity="start">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/configurateParameters"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="@dimen/configurate_parameters_text_bottom_margins" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/passwordLenght"
+                    android:textColor="@color/black" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/sliderParam1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tickVisible="false"
+                    app:trackColorActive="@color/main"
+                    app:trackColorInactive="@color/veryLightGrey"
+                    app:thumbColor="@color/main"
+                    app:thumbRadius="10dp"
+                    android:valueTo="25"
+                    android:stepSize="1" />
+
+                <CheckBox
+                    android:id="@+id/checkUppercase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lettersCapitalUse"
+                    android:textSize="@dimen/check_box_letters_capital_text_size"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="@dimen/check_box_letters_capital_top_margins"
+                    android:layout_marginStart="@dimen/check_box_letters_capital_start_margins" />
+
+                <CheckBox
+                    android:id="@+id/checkDigits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/numbersUse"
+                    android:textSize="@dimen/check_box_numbers_text_size"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="@dimen/check_box_numbers_top_margins"
+                    android:layout_marginStart="@dimen/check_box_numbers_start_margins" />
+
+                <CheckBox
+                    android:id="@+id/checkSymbols"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/charactersSpecialUse"
+                    android:textSize="@dimen/check_box_characters_special_text_size"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="@dimen/check_box_characters_special_top_margins"
+                    android:layout_marginStart="@dimen/check_box_characters_special_start_margins" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/passwordOutput"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:minLines="1"
+        android:maxLines="5"
+        android:scrollbars="vertical"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:ellipsize="none"
+        android:breakStrategy="simple"
+        android:hyphenationFrequency="none"
+        android:background="@drawable/edit_text_background"
+        android:paddingStart="@dimen/outputGraph_start_padding"
+        android:paddingEnd="@dimen/outputGraph_end_padding"
+        android:textSize="@dimen/outputGraph_text_size"
+        android:textColor="@color/black"
+        android:hint="@string/passwordOutput"
+        android:gravity="center"
+        android:textColorHint="@color/grey"
+        android:editable="false"
+        android:focusable="false"
+        android:cursorVisible="false"
+        android:longClickable="true"
+        android:textIsSelectable="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toTopOf="@id/passGenButtonGenerate"
+        app:layout_constraintBottom_toBottomOf="@id/passGenButtonGenerate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/passGenButtonGenerate"/>
+
+    <ImageButton
+        android:id="@+id/passGenButtonGenerate"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:src="@drawable/rocket"
+        app:tint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_gradient"
+        android:contentDescription="@string/passwordGenerate" />
+</androidx.constraintlayout.widget.ConstraintLayout>
